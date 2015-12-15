@@ -177,7 +177,7 @@ If you don't already have the bundler gem installed, install it now:
 Now change to the root of the fpm repo and run:
 
     $ bundle install
-
+    
 This will install all of the dependencies required for running fpm from source.
 Most importantly, you should see the following output from the bundle command
 when it lists the fpm gem:
@@ -187,6 +187,13 @@ when it lists the fpm gem:
     Using fpm (0.4.42) from source at .
     Using hitimes (1.2.1) 
     ...
+
+If your system doesn't have `bsdtar` by default, make sure to install it or some
+tests will fail:
+
+    apt-get install bsdtar
+    
+    yum install bsdtar
 
 Next, run make in root of the fpm repo.  If there are any problems (such as
 missing dependencies) you should receive an error
